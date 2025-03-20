@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position_absoluteLeftTop</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        .box#red {
+            background-color: red;
+            /* left, top 지정하지 않으면 다음 문제에서 issue */
+            left: 10px;
+            top: 10px;
+        }
+
+        .box#green {
+            background-color: green;
+            left: 50px;
+            top: 50px;
+        }
+
+        .box#blue {
+            background-color: blue;
+            left: 90px;
+            top: 90px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="red"></div>
+    <div class="box" id="green"></div>
+    <div class="box" id="blue"></div>
+</body>
+
+</html>

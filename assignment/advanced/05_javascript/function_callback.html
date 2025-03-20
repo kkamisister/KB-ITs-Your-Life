@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function_callback</title>
+    <script>
+        // 콜백 함수
+        function givemeMeAlert() {
+            alert('함수 호출')
+        }
+
+        // 반복 호출 함수
+        function repeatAlert(callback, times) {
+            for (let i = 0; i < times; i++) {
+                callback()
+            }
+        }
+        repeatAlert(givemeMeAlert, 3)
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checked</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            좋아하는 음식은?
+            <label><input type="checkbox" name="food" value="라면" />
+                라면</label>
+            <label><input type="checkbox" name="food" value="만두" />
+                만두</label>
+            <label><input type="checkbox" name="food" value="불고기" />
+                불고기</label>
+            <!-- 전체 선택/해제 쳌박 : 진행중 -->
+            <!-- <label><input type="checkbox" name="select-all" value="select-all">
+                전체 선택</label> -->
+            <input id="btn" type="button" value="전송" />
+        </div>
+    </form>
+    <script>
+        let btn = document.getElementById("btn")
+        // const checkboxes = document.querySelectorAll('input[name="food"]:checked');
+        // const selectedValues = [];
+
+        btn.onclick = function () {
+            // 보통 함수 내에서만 필요한 변수는 함수 내에 선언함
+
+            // 1. id가 btn인 요소 btn 변수에 할당
+            let btn = document.getElementById("btn")
+
+            // 2. 체크된, name이 'food'인 요소 모두 선택
+            const checkboxes = document.querySelectorAll('input[name="food"]:checked');
+
+            // 3. 체크된 food 요소 담을 빈 배열 생성
+            const selectedFoods = [];
+
+            for (let i = 0; i < checkboxes.length; i++) {
+                selectedFoods.push(checkboxes[i].value);
+            }
+            // 선택한 음식 출력
+            console.log(selectedFoods);
+            // 선택한 음식 수 출력
+            console.log(selectedFoods.length + '개나 드시려구요?')
+        };
+    </script>
+</body>
+
+</html>

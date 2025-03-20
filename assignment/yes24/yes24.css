@@ -1,0 +1,108 @@
+/* 전체 wrap */
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+/* 헤더 */
+header .logo {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* 메인 영역 */
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 로그인 form */
+.login-form {
+  width: 60%;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.tab-menu button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.tab-menu .active {
+  border-bottom: 2px solid blue;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+
+  /* box-sizing: border-box -> 인풋 박스 너비 부모 초과하지 않게 */
+  /* 이렇게 하면 input 박스 너비가 부모요소 내부 너비를 모두 차지하게 됨 */
+  box-sizing: border-box;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.find-info {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* 소셜 로그인 */
+.social-login button {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+/* 우측 광곡영역 */
+.ads {
+  width: 35%;
+  padding: 10px;
+}
+
+.ad {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* 배너 */
+footer .banner {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
