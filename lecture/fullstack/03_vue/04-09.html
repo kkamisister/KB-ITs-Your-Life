@@ -21,19 +21,20 @@
                 return { values: { x: 0, y: 0 }, sum: 0 };
             },
             watch: {
-                values(current) {
-                    var result = Number(current.x) + Number(current.y);
-                    if (isNaN(result)) this.sum = 0;
-                    else this.sum = result;
-                },
-                // values: {
-                //   handler: function (current) {
+                // 문제 있는 코드
+                // values(current) {
                 //     var result = Number(current.x) + Number(current.y);
                 //     if (isNaN(result)) this.sum = 0;
                 //     else this.sum = result;
-                //   },
-                //   deep: true,
                 // },
+                values: {
+                    handler: function (current) {
+                        var result = Number(current.x) + Number(current.y);
+                        if (isNaN(result)) this.sum = 0;
+                        else this.sum = result;
+                    },
+                    deep: true,
+                },
             },
         }).mount("#app");
     </script>
