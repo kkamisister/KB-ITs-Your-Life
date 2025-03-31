@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>username</title>
+
+    <!-- 1. head에 script 삽입 -> window.onload -->
+    <!-- <script>
+        // window.onload로 이벤트 연결
+        window.onload = function () {
+            // id가 btn인 요소 btn 변수에 할당
+            let btn = document.getElementById('btn');
+
+            // btn에 할당한 요소 클릭 시 함수 수행
+            btn.onclick = function () {
+                // id가 name인 요소 추출, 해당 요소 내의 값(value) 콘솔에 출력
+                console.log(document.getElementById('name').value);
+            };
+        };
+    </script> -->
+</head>
+
+<body>
+    <form>
+        <label for="name">이름:</label>
+        <input id="name" name="name" type="text" size="30" />
+        <input id="btn" type="button" value="전송" />
+    </form>
+
+    <!-- 2. body에 script 삽입-->
+    <script>
+        // id가 btn인 요소 btn 변수에 할당
+        let btn = document.getElementById('btn');
+
+        // btn에 할당한 요소 클릭 시 함수 수행
+        btn.onclick = function () {
+            // id가 name인 요소 추출, 해당 요소 내의 값(value) 콘솔에 출력
+            console.log(document.getElementById('name').value);
+        };
+    </script>
+</body>
+
+</html>
