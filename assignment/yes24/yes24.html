@@ -2,75 +2,78 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yes24</title>
-    <link rel="stylesheet" href="./yes24.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예스24 - 대한민국 대표 인터넷서점</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
-    <!-- 메인 wrap -->
-    <div class="wrap">
-
-        <!-- 헤더 -->
-        <header>
-            <h1 class="logo">YES24</h1>
-            <h2>로그인</h2>
-            <button>회원가입</button>
-        </header>
-
-        <!-- 메인 영역 -->
-        <main>
-
-            <!-- 로그인 영역 -->
-            <section class="login-form">
-                <div class="tab-menu">
-                    <button class="active">회원</button>
-                    <button>비회원 주문확인</button>
-                </div>
-
-                <!-- 로그인 폼 -->
-                <form>
-                    <input type="text" placeholder="아이디" required>
-                    <input type="password" placeholder="비밀번호" required>
-
-                    <div class="options">
-                        <label><input type="checkbox"> 로그인 상태 유지</label>
-                        <label><input type="checkbox"> 아이디 저장</label>
+    <div class="container">
+        <img src="./assets/images/logoN4.png" alt="YES24 로고" class="header-logo" />
+        <a href="#" class="join-btn">회원가입</a>
+        <div class="login-box">
+            <div class="login-content">
+                <!-- 로그인 폼 영역 -->
+                <div class="form-area">
+                    <div class="tab-menu">
+                        <button class="tab active" data-tab="member">회원</button>
+                        <button class="tab" data-tab="non-member">비회원 주문확인</button>
                     </div>
 
-                    <button type="submit" class="login-btn">로그인</button>
+                    <div class="tab-content active" id="member">
+                        <form>
+                            <input type="text" placeholder="아이디" />
+                            <input type="password" placeholder="비밀번호" />
+                            <div class="options">
+                                <label><input type="checkbox" /> 로그인 상태 유지</label>
+                                <label><input type="checkbox" /> 아이디 저장</label>
+                            </div>
+                            <button class="login-btn">로그인</button>
+                            <div class="links">
+                                <a href="#">아이디 찾기</a> | <a href="#">비밀번호 찾기</a>
+                            </div>
+                        </form>
 
-                    <div class="find-info">
-                        <a href="#">아이디 찾기</a> | <a href="#">비밀번호 찾기</a>
+                        <div class="sns-login">
+                            <button class="naver">네이버 아이디로 로그인</button>
+                            <button class="kakao">카카오 아이디로 로그인</button>
+                            <button class="facebook">페이스북 아이디로 로그인</button>
+                            <button class="mobile">모바일 간편 로그인</button>
+                        </div>
                     </div>
-                </form>
 
-                <!-- 소셜 로그인 -->
-                <div class="social-login">
-                    <button>네이버 아이디로 로그인</button>
-                    <button>카카오 아이디로 로그인</button>
-                    <button>페이스북 아이디로 로그인</button>
-                    <button>모바일 간편 로그인</button>
+                    <div class="tab-content" id="non-member">
+                        <form>
+                            <input type="text" placeholder="주문번호" />
+                            <input type="password" placeholder="주문 비밀번호" />
+                            <button class="login-btn">확인</button>
+                            <div class="links">
+                                <a href="#">주문번호 찾기</a> | <a href="#">주문 비밀번호 찾기</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </section>
 
-            <!-- 광고 영역 -->
-            <aside class="ads">
-                <div class="ad">광고 1</div>
-                <div class="ad">광고 2</div>
-            </aside>
+                <!-- 배너 영역 -->
+                <div class="side-banner">
+                    <img src="./assets/images/bn_1.jpg" alt="이달의 혜택 모음" />
+                    <img src="./assets/images/bn_2.jpg" alt="2025 페스티벌 기획전" />
+                </div>
+            </div>
+        </div>
 
-        </main>
+        <div class="bottom-banner">
+            <img src="./assets/images/bn_footer.gif" alt="지금 회원가입" />
+        </div>
 
-        <!-- 푸터 -->
         <footer>
-            <div class="banner">지금 회원가입하면 쿠폰 증정</div>
-            <p>&copy; YES24 Corp. All Rights Reserved.</p>
+            <p>Copyright © YES24 Corp. All Rights Reserved.</p>
         </footer>
-
     </div>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
