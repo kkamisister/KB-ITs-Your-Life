@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checked</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            좋아하는 음식은?
+            <!-- 전체 선택/해제 쳌박 -->
+            <label><input type="checkbox" id="select-all" name="select-all" value="select-all" onclick=selectAll()>
+                전체 선택</label>
+            <label><input type="checkbox" name="food" value="라면" onclick=countChecked() />
+                라면</label>
+            <label><input type="checkbox" name="food" value="만두" onclick=countChecked() />
+                만두</label>
+            <label><input type="checkbox" name="food" value="불고기" onclick=countChecked() />
+                불고기</label>
+            <input id="btn" type="button" value="전송" onclick=decideFoods() />
+        </div>
+    </form>
+    <script>
+        const $checkboxes = document.querySelectorAll('input[name="food"]')
+        const $selectAll = document.getElementById("select-all")
+
+        // 체크박스 카운팅 함수
+        function countChecked() {
+
+            // 1. checked==true인 체크박스들 선택
+            let $checkedBoxes = document.querySelectorAll('input[name="food"]:checked')
+            // 2. 3개 선택 된 상태면
+            if ($checkedBoxes.length == 3) {
+                // 전체 선택도 true로 변경
+                $selectAll.checked = true
+                // 3. 3개가 아니면 전체 선택 false로 변경
+            } else {
+                $selectAll.checked = false
+            }
+        }
+
+
+        // 전체 선택/해제 함수
+        function selectAll() {
+
+            // 1. 체크박스 전체 순회하며 
+            $checkboxes.forEach($checkbox => {
+                // 2. checked 상태값이 전체선택의 checked 상태값과 다르면 
+                if ($checkbox.checked != $selectAll.checked) {
+                    // 3. selectAll의 상태값과 동일하게 checked 값 변경
+                    $checkbox.checked = $selectAll.checked
+                }
+            });
+        }
+
+        // 전송 버튼 선택
+        const $btn = document.getElementById("btn")
+
+        // 전송 함수
+        function decideFoods() {
+            // // 1. id가 btn인 요소 btn 변수에 할당
+            // let btn = document.getElementById("btn")
+
+            // 2. 체크된, name이 'food'인 요소 모두 선택
+            let $checkedBoxes = document.querySelectorAll('input[name="food"]:checked');
+
+            // 3. 체크 개수에 따라 분기
+            // 3-1. 1개 이상 선택했을 때 : 선택한 음식 + 선택한 개수 출력
+            if ($checkedBoxes.length) {
+                // 1) 체크된 food 요소 담을 빈 배열 생성
+                const selectedFoods = [];
+
+                // 2) 배열에 $checkedBoxes 인덱스로 순회하며 push
+                for (let i = 0; i < $checkedBoxes.length; i++) {
+                    selectedFoods.push($checkedBoxes[i].value);
+                }
+
+                // 3) 선택한 음식 출력
+                console.log('내가 좋아하는 건 말이죠 : ' + selectedFoods);
+                // 4) 선택한 음식 수 출력
+                console.log(selectedFoods.length + '개나 드시려구요?')
+
+
+            }
+            else { // 3-2. 아무것도 선택하지 않았을 때 : 꼽주기
+                console.log('왜 안 고르세요')
+
+            }
+
+        };
+    </script>
+</body>
+
+</html>
