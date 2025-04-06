@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>control_style</title>
+  <script>
+    window.onload = function () {
+      const $body = document.querySelector('body');
+      let divs = '';
+      for (let i = 0; i < 256; i++) {
+        divs += '<div></div>';
+      }
+      $body.innerHTML = divs;
+      const $div = document.querySelectorAll('div');
+      $div.forEach((el, i) => {
+        el.style.cssText = `margin = 0; padding: 0; height: 2px; background-color: rgb(${255 - i
+          }, ${255 - i}, ${255 - i})`;
+      });
+    };
+  </script>
+</head>
+
+<body></body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>control</title>
+  <script>
+    window.onload = function () {
+      const $body = document.querySelector('body');
+      let content = '';
+      for (let i = 0; i < 10; i++) {
+        content += `<h1>Header - ${i}</h1>`;
+      }
+      $body.innerHTML = content;
+    };
+  </script>
+</head>
+
+<body></body>
+
+</html>

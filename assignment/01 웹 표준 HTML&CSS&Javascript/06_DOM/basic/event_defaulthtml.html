@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>event_defaulthtml</title>
+  <script>
+    window.onload = function () {
+      const $button = document.getElementById('button');
+
+      $button.onclick = function () {
+        return false;
+      };
+    };
+  </script>
+</head>
+
+<body>
+  <a id="button" href="http://www.naver.com">버튼</a>
+</body>
+
+</html>

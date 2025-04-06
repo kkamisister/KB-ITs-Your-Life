@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>event_tradition</title>
+  <script>
+    window.onload = function () {
+      let button = document.getElementById('button');
+      const $text = button.innerText;
+
+      // addEventListener 사용, 클릭 이벤트 연결
+      button.addEventListener('click', (e) => {
+        alert($text);
+      });
+    };
+  </script>
+</head>
+
+<body>
+  <button id="button">버튼</button>
+</body>
+
+</html>

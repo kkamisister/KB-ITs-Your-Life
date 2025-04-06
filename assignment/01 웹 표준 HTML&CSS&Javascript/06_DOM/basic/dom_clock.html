@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>dom_clock</title>
+  <script>
+    window.onload = function () {
+      const $clock = document.getElementById('clock');
+      setInterval(() => {
+        let time = new Date();
+        $clock.innerHTML = time.toString();
+      }, 1000);
+    };
+  </script>
+</head>
+
+<body>
+  <h1 id="clock"></h1>
+</body>
+
+</html>
