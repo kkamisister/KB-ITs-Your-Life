@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join2</title>
+</head>
+
+<body>
+    <form>
+        <fieldset>
+            <legend>회원가입</legend>
+            <table>
+                <!-- (tr>((th>label)+(td>input)))*8 -->
+                <tr>
+                    <th><label for="id">사용자 ID</label></th>
+                    <td><input type="text" id="id" name="id"></td>
+                </tr>
+                <tr>
+                    <th><label for="password">비밀번호</label></th>
+                    <td><input type="password" id="password" name="password"></td>
+                </tr>
+                <tr>
+                    <th><label for="confirm">비밀번호 확인</label></th>
+                    <td><input type="password" id="confirm" name="confirm"></td>
+                </tr>
+                <tr>
+                    <th><label for="username">이름</label></th>
+                    <td><input type="text" id="username" name="username"></td>
+                </tr>
+                <tr>
+                    <th>성별</th>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="m">
+                        <label for="male">남</label>
+                        <input type="radio" id="female" name="gender" value="w">
+                        <label for="female">여</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>취미</th>
+                    <td>
+                        <input type="checkbox" id="soccer" name="hobby" value="so">
+                        <label for="soccer">축구</label>
+                        <input type="checkbox" id="baseball" name="hobby" value="bs">
+                        <label for="baseball">야구</label>
+                        <input type="checkbox" id="volleyball" name="hobby" value="vo">
+                        <label for="volleyball">배구</label>
+                        <input type="checkbox" id="basketball" name="hobby" value="bk">
+                        <label for="basketball">농구</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="email">email</label></th>
+                    <td><input type=" text" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <th><label for="role">역할</label></th>
+                    <td>
+                        <select name="role" id="role">
+                            <option value="admin">ADMIN</option>
+                            <option value="manager">관리자</option>
+                            <option value="user">일반회원</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" value="확인">
+            <input type="reset" value="다시쓰기">
+        </fieldset>
+    </form>
+</body>
+
+</html>
