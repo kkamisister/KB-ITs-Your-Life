@@ -1,0 +1,141 @@
+문제1] 프로젝트 생성 및 초기화 명령
+$ npm create vue contacts-app
+$ cd contacts-app/
+$ npm i
+$ npm i bootstrap5 axios vue-router
+$ npm run dev
+
+
+문제2] json-server 실행 명령
+$ npx json-server contacts.json --watch --port 3000
+
+
+문제3-1] src/router/index.js 작성
+import { createRouter, createWebHistory } from 'vue-router'
+import ContactListPage from '@/components/ContactListPage.vue'
+import ContactDetailPage from '@/components/ContactDetailPage.vue'
+import ContactWritePage from '@/components/ContactWritePage.vue'
+import ContactEditPage from '@/components/ContactEditPage.vue'
+
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    { path: '/', name: 'home', redirect: '/contacts' },
+    { path: '/contacts', name: 'contacts', component: ContactListPage },
+    {
+      path: '/contacts/detail/:id',
+      name: 'contacts/detail',
+      component: ContactDetailPage,
+    },
+    {
+      path: '/contacts/write ',
+      name: 'contacts/write',
+      component: ContactWritePage,
+    },
+    {
+      path: '/contacts/edit/:id',
+      name: 'contacts/edit',
+      component: ContactEditPage,
+    },
+  ],
+})
+
+export default router
+
+
+문제3-2] src/App.vue 작성
+<script setup>
+import { RouterLink, RouterView } from 'vue-router'
+</script>
+
+<template>
+  <RouterView />
+</template>
+
+<style scoped>
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+</style>
+
+
+<style scoped></style>
+
+
+
+문제4] src/pages/ContactListPage.vue 작성
+<template>
+  <div class="container">
+    <h1>연락처</h1>
+    <div class="graph">
+      <ul class="list-group">
+        <fa-fa-solid />
+        <li
+          v-for="contactitem in contactlist"
+          :key="contactitem.id"
+          :name="contactitem.name"
+        >
+          {{ contactitem.id }}
+        </li>
+      </ul>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import axios from 'axios'
+
+const getContactList = async () => {
+  const url = '/api/contacts'
+  const response = await axios.get(url)
+  const contactlist = response.data
+  console.log(contactlist)
+  return contactlist
+}
+getContactList()
+</script>
+
+<style scoped></style>
+
+
+
+문제5] src/pages/ContactDetailPage.vue 작성
+<template>
+  <div class="container">
+    <h1>연락처</h1>
+  </div>
+</template>
+
+<script setup></script>
+
+<style scoped></style>
+
+
+
+문제6] src/pages/ContactWritePage.vue 작성
+<template>
+  <div class="container">
+    <h1>새 연락처</h1>
+  </div>
+</template>
+
+<script setup></script>
+
+<style scoped></style>
+
+
+
+문제7] src/pages/ContactEditPage.vue 작성
+<template>
+  <div class="container">
+    <h1>연락처 수정</h1>
+  </div>
+</template>
+
+<script setup></script>
+
+<style scoped></style>
+
+
+
+
+
+
