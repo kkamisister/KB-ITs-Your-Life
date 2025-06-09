@@ -1,0 +1,12 @@
+package org.scoula.ex06.controller;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+
+public class HomeController {
+    public String getIndex(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        return "index.jsp";
+    }
+}
