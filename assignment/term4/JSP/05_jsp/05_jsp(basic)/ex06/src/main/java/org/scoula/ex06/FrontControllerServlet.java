@@ -35,7 +35,7 @@ public class FrontControllerServlet extends HttpServlet {
         Command command = getCommand(req);
         if(command != null) {
             execute(command, req, resp);
-        } else { // 404 에러 처리
+        } else {
             String view = prefix + "404" + suffix;
             RequestDispatcher dis = req.getRequestDispatcher(view);
             dis.forward(req, resp);
@@ -66,9 +66,9 @@ public class FrontControllerServlet extends HttpServlet {
             throws IOException, ServletException {
         String viewName = command.execute(request, response);
 
-        if(viewName.startsWith("redirect:")) { // redirect 처리
+        if(viewName.startsWith("redirect:")) {
             response.sendRedirect(viewName.substring("redirect:".length()));
-        } else { // forward 처리
+        } else {
             String view = prefix + viewName + suffix;
             RequestDispatcher dis = request.getRequestDispatcher(view);
             dis.forward(request, response);
