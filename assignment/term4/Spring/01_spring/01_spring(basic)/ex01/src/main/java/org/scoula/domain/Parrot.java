@@ -4,11 +4,11 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-@Component // 의존성 주입을 위한 어노테이션
+@Component
 public class Parrot {
     private String name;
 
-    @PostConstruct  // 필드주입
+    @PostConstruct
     public void init() {
         this.name = "Kiki";
     }
